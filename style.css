@@ -1,5 +1,11 @@
+.calculator {
+    display: flex;
+}
+
+.display {
+    display: flex;
+}
+
 .number-pad {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
 }

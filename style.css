@@ -1,1 +1,33 @@
+#calculator {
+    border: 1px solid black;
+    width: 400px;
+    margin: auto;
+    background-color: black;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row button {
+    width: 100%;
+    background-color: black;
+    border-color: red;
+    color: red;
+}
+
+.display {
+    width: 100%;
+    color: red;
+}
+
+
+
+.row button:hover {
+    background-color: red;
+    border-color: black;
+    color: black;
+}
 

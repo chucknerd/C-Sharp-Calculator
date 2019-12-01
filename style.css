@@ -1,11 +1,17 @@
 .calculator {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .display {
-    display: flex;
+
 }
 
-.number-pad {
-    display: flex;
+#number-pad {
+
+}
+
+#button {
+
 }

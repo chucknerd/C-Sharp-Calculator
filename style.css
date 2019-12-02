@@ -1,10 +1,15 @@
 body {
-    background-color: black;
-}
+    background-image: url(https://live.staticflickr.com/65535/49157294761_25a9bb76e6_o_d.jpg);
+    background-size: cover;
+    }
+
 #calculator {
     border: 3px solid red;
     width: 200px;
     height: 230px;
+    position: absolute;
+    left: 40%;
+    top: 30%;
     margin: auto;
     background-color: black;
     border-radius: 5%;
@@ -32,9 +37,10 @@ body {
     color: red;
     background-color: black;
     border-color: red;
-    border-radius: 10%;
+    border-radius: 5%;
     height: 45px;
     font-size: 200%;
+    text-align: right;
 }
 
 .row button:hover {

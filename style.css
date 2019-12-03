@@ -17,13 +17,13 @@ body {
 }
 
 
-.row {
+.calculator-keys {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.row button {
+.calculator-keys button {
     width: 100%;
     background-color: black;
     border-color: red;
@@ -32,7 +32,7 @@ body {
     height: 45px;
 }
 
-.display {
+.calculator-screen {
     width: 99%;
     color: red;
     background-color: black;
@@ -43,22 +43,22 @@ body {
     text-align: right;
 }
 
-.row button:hover {
+.calculator-keys button:hover {
     background-color: red;
     border-color: black;
     color: black;
     border-radius: 10%;
 }
 
-.display:focus {
+.calculator-screen:focus {
     outline: none;
 } 
 
-.row button:focus {
+.calculator-keys button:focus {
     outline: none;
 } 
 
-.row button:active {
+.calculator-keys button:active {
     border: red;
 }
 

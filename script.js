@@ -24,7 +24,12 @@ const calculator = {
     console.log(calculator);
 }
 
+
+
 function inputDecimal(dot) {
+
+    if (calculator.waitingForSecondOperand === true) return;
+
     if (!calculator.displayValue.includes(dot)) {
         calculator.displayValue += dot;
     }
@@ -33,6 +38,12 @@ function inputDecimal(dot) {
 function handleOperator(nextOperator) {
     const {firstOperand, displayValue, operator} = calculator
     const inputValue = parseFloat(displayValue);
+
+    if (operator && calculator.waitingForSecondOperand) {
+        calculator.operator = nextOperator;
+        console.log(calculator);
+        return;
+    }
 
     if (firstOperand === null) {
         calculator.firstOperand = inputValue;
@@ -47,7 +58,27 @@ function handleOperator(nextOperator) {
     calculator.operator = nextOperator;
     console.log(calculator);
 }
-  
+
+const performCalculation = {
+    "/": (firstOperand, secondOperand) => firstOperand / secondOperand,
+
+    "*": (firstOperand, secondOperand) => firstOperand * secondOperand,
+
+    "+": (firstOperand, secondOperand) => firstOperand + secondOperand, 
+
+    "-": (firstOperand, secondOperand) => firstOperand - secondOperand,
+
+    "=": (firstOperand, secondOperand) => secondOperand
+};
+
+function resetCalculator() {
+    calculator.displayValue = "0";
+    calculator.firstOperand = null;
+    calculator.waitingForSecondOperand = false;
+    calculator.operator = null;
+    console.log(calculator);
+}
+
   updateDisplay();
   
   const keys = document.querySelector(".keys");
@@ -70,15 +101,17 @@ function handleOperator(nextOperator) {
       }
 
       if (target.classList.contains('all-clear')) {
-          console.log('all-clear', target.value);
+          resetCalculator();
+          updateDisplay();
           return;
       }
           inputDigit(target.value);
           updateDisplay();
+      
       
   });
 
 
 
   
-    //https://freshman.tech/calculator/
+    //Credit: Tutorial I followed THANK YOU! - https://freshman.tech/calculator/

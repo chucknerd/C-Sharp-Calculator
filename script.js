@@ -105,12 +105,27 @@ function resetCalculator() {
           updateDisplay();
           return;
       }
-          inputDigit(target.value);
-          updateDisplay();
+
       
+// keyboard input
+      keys.addEventListener("keypress", (event) => {
+          const {target} = event;
+          if (!target.matches("button")) {
+              return;
+          }
+      })
+
+
+          inputDigit(target.value);
+          updateDisplay(); 
       
   });
 
+  
+
+
+
+      
 
 
   

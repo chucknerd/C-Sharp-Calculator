@@ -113,14 +113,18 @@ function resetCalculator() {
 
 // KEYPRESS
 
-document.querySelector('.calculator-screen').addEventListener('keypress', function (e) {
-    const key = e.key || e.keyCode;
-
-    if (key === 97) { 
+const keyPress = document.querySelector(".keys")
+keys.addEventListener("keypress", (event) => {
+    const {target} = event;
+    if (!target.matches("button")) {
+        return;
+    }
+    
+    if (keys === 97) {
         inputDigit(target.value);
         updateDisplay();
     }
-});
+})
 
 
 

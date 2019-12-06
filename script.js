@@ -106,22 +106,21 @@ function resetCalculator() {
           return;
       }
 
-      
-// keyboard input
-      keys.addEventListener("keypress", (event) => {
-          const {target} = event;
-          if (!target.matches("button")) {
-              return;
-          }
-      })
-
-
           inputDigit(target.value);
           updateDisplay(); 
       
   });
 
-  
+// KEYPRESS
+
+document.querySelector('.calculator-screen').addEventListener('keypress', function (e) {
+    const key = e.key || e.keyCode;
+
+    if (key === 97) { 
+        inputDigit(target.value);
+        updateDisplay();
+    }
+});
 
 
 
